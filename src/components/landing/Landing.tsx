@@ -6,7 +6,7 @@ import WhiteLogo from "../../img/white-logo.svg";
 const Landing = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <Background />
+      <Background lightOpacity={60} darkOpacity={80} />
       <div className="flex flex-col gap-7 items-center">
         <div className="relative h-[190px] w-[680px]">
           <div className="absolute right-0 top-0 ">
