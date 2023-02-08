@@ -11,7 +11,7 @@ const Background = ({
   return (
     <div>
       <div
-        className={`w-full h-screen fixed top-0 left-0 -z-10 bg-white opacity-${lightOpacity} dark:bg-black dark:opacity-${darkOpacity}`}
+        className={` w-full h-screen fixed top-0 left-0 -z-10 bg-white opacity-${lightOpacity} dark:bg-black dark:opacity-${darkOpacity} `}
       />
       <img
         className="w-full h-screen fixed top-0 left-0 -z-20"
