@@ -10,7 +10,7 @@ import InstargramLogo from "../../img/instargram.svg";
 const Login = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center">
-      <Background lightOpacity={60} darkOpacity={50} />
+      <Background lightOpacity={50} darkOpacity={50} />
       <div className="w-[576px] py-[110px] px-[60px] bg-white dark:bg-basic-dark flex flex-col items-center rounded-[20px]">
         <div className="relative h-[57px] w-[203px]">
           <div className="absolute right-0 top-0 ">
