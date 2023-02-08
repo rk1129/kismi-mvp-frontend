@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/kismi-mvp-frontend/static/css/main.36b8ec1a.css",
+    "main.js": "/kismi-mvp-frontend/static/js/main.6c901cf6.js",
+    "static/js/787.cda612ba.chunk.js": "/kismi-mvp-frontend/static/js/787.cda612ba.chunk.js",
+    "static/media/desktop-background.png": "/kismi-mvp-frontend/static/media/desktop-background.79678782c4e87087f279.png",
+    "static/media/instargram.svg": "/kismi-mvp-frontend/static/media/instargram.8b75f37322b129c6f5ce6f9066674628.svg",
+    "static/media/twitter.svg": "/kismi-mvp-frontend/static/media/twitter.98f0b96f6e122f6ca0139df77e40dc0e.svg",
+    "static/media/facebook.svg": "/kismi-mvp-frontend/static/media/facebook.d51afe67b431b1daae410fed5959fcd4.svg",
+    "static/media/black-logo.svg": "/kismi-mvp-frontend/static/media/black-logo.8964b1a2601f73145bf96ba0366366b4.svg",
+    "static/media/white-logo.svg": "/kismi-mvp-frontend/static/media/white-logo.aa90be0d8b8bb4cf9240eecf93237665.svg",
+    "static/media/tiktok.svg": "/kismi-mvp-frontend/static/media/tiktok.1249f6b5c3f953a81a0410b42240ef10.svg",
+    "index.html": "/kismi-mvp-frontend/index.html",
+    "main.36b8ec1a.css.map": "/kismi-mvp-frontend/static/css/main.36b8ec1a.css.map",
+    "main.6c901cf6.js.map": "/kismi-mvp-frontend/static/js/main.6c901cf6.js.map",
+    "787.cda612ba.chunk.js.map": "/kismi-mvp-frontend/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36b8ec1a.css",
+    "static/js/main.6c901cf6.js"
+  ]
+}
