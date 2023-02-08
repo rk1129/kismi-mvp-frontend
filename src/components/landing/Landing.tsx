@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Background from "../common/Background";
 import BlackLogo from "../../img/black-logo.svg";
 import WhiteLogo from "../../img/white-logo.svg";
 
 const Landing = () => {
+  const nagivate = useNavigate();
+  useEffect(() => {
+    setTimeout(() => {
+      nagivate("/auth/login");
+    }, 2000);
+  }, []);
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <Background lightOpacity={60} darkOpacity={80} />
