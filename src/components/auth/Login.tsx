@@ -6,10 +6,20 @@ import FacebookLogo from "../../img/facebook.svg";
 import TwitterLogo from "../../img/twitter.svg";
 import TikTokLogo from "../../img/tiktok.svg";
 import InstargramLogo from "../../img/instargram.svg";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { loginSuccess, selectIsAuthenticated } from "./authSlice";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
+  const isAuthenticated = useAppSelector(selectIsAuthenticated);
+  const dispatch = useAppDispatch();
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(loginSuccess());
+  };
+  if (isAuthenticated) return <Navigate to="/home" replace={true} />;
   return (
-    <div className="w-full h-screen flex items-center justify-center">
+    <div className="w-full h-screen flex items-center justify-center rounded-[20px]">
       <Background lightOpacity={50} darkOpacity={50} />
       <div className="w-[576px] py-[110px] px-[60px] bg-white dark:bg-basic-dark flex flex-col items-center rounded-[20px]">
         <div className="relative h-[57px] w-[203px]">
@@ -23,7 +33,7 @@ const Login = () => {
         <h1 className="text-basic-dark dark:text-white text-3xl mt-8 font-medium">
           Welcome to Kismi.app
         </h1>
-        <form className="mt-[50px] w-full">
+        <form className="mt-[50px] w-full" onSubmit={onSubmit}>
           <div>
             <div className="w-full">
               <p className="font-normal text-base text-basic-dark dark:text-white">

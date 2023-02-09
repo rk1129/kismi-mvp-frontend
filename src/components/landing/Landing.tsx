@@ -12,7 +12,7 @@ const Landing = () => {
     }, 2000);
   }, []);
   return (
-    <div className="w-full h-screen flex justify-center items-center">
+    <div className="w-full h-screen flex justify-center items-center rounded-[20px]">
       <Background lightOpacity={60} darkOpacity={80} />
       <div className="flex flex-col gap-7 items-center">
         <div className="relative h-[190px] w-[680px]">
