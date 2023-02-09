@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useAppDispatch } from "../../app/hooks";
 import ColumnsSelector from "../common/ColumnSelector";
 import ViewItem from "../common/ViewItem";
+import { setIsnotificationOpened } from "../routing/routeSlice";
 
 const Home = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(setIsnotificationOpened(false));
+  }, []);
+
   const [selectedNum, setSelecteNum] = useState(4);
 
   return (

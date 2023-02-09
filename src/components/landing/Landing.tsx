@@ -23,7 +23,7 @@ const Landing = () => {
             <img src={BlackLogo} />
           </div>
         </div>
-        <p className="text-2xl w-[1010px] text-center text-basic-dark dark:text-basic-light font-normal">
+        <p className="text-2xl w-[1010px] text-center text-basic-dark dark:text-white font-normal">
           Read writing from KISMI.APP on Medium. Web3 Photo Voting App. Every
           day, <br /> KISMI.APP and thousands of other voices read, write, and
           share important stories on <br /> Medium.

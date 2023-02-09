@@ -32,7 +32,7 @@ const ColumnsSelector = ({
           onClick={() => setSelectedNum(i + min)}
           className="flex-1 h-1 relative flex justify-center"
         >
-          <div className="absolute -top-1 w-3 h-3 rounded-[50%] bg-special-red flex justify-center items-center ">
+          <div className="absolute -top-2 w-4 h-4 rounded-[50%] bg-special-red flex justify-center items-center ">
             <p className="text-white text-[12px]">{selectedNum}</p>
           </div>
         </button>
