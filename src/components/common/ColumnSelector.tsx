@@ -21,7 +21,7 @@ const ColumnsSelector = ({
           onClick={() => {
             setSelectedNum(i + min), setBodyNum(i + min);
           }}
-          className="outline-none flex-1 h-1"
+          className="flex-1 h-1"
         ></button>
       );
     else
@@ -30,7 +30,7 @@ const ColumnsSelector = ({
           key={i}
           type="button"
           onClick={() => setSelectedNum(i + min)}
-          className="outline-none flex-1 h-1 relative flex justify-center"
+          className="flex-1 h-1 relative flex justify-center"
         >
           <div className="absolute -top-1 w-3 h-3 rounded-[50%] bg-special-red flex justify-center items-center ">
             <p className="text-white text-[12px]">{selectedNum}</p>
@@ -38,7 +38,11 @@ const ColumnsSelector = ({
         </button>
       );
   }
-  return <div className="w-[148px] h-0.5 rounded bg-white flex">{buttons}</div>;
+  return (
+    <div className="w-[148px] h-0.5 rounded bg-basic-dark dark:bg-white flex">
+      {buttons}
+    </div>
+  );
 };
 
 export default ColumnsSelector;

@@ -6,32 +6,30 @@ const Home = () => {
   const [selectedNum, setSelecteNum] = useState(4);
 
   return (
-    <div className="w-full overflow-auto flex flex-col items-center py-11 gap-5">
-      <p className="text-white font-bold text-[50px]">COMPETITION ROUND 001</p>
+    <div className="w-full overflow-auto flex flex-col items-center py-11 gap-5 text-basic-dark dark:text-white">
+      <p className="font-bold text-[50px]">COMPETITION ROUND 001</p>
       <div className="w-full flex flex-col items-center gap-[10px]">
-        <p className="font-semibold text-[30px] text-white">
-          Current Round Timer
-        </p>
-        <div className="flex gap-10">
+        <p className="font-semibold text-[30px]">Current Round Timer</p>
+        <div className="flex gap-10 dark:text-white text-black">
           <div className="flex flex-col items-center gap-[10px]">
-            <p className="text-[50px] font-semibold text-white">07</p>
-            <p className="text-[20px] font-semibold text-white">DAYS</p>
+            <p className="text-[50px] font-semibold">07</p>
+            <p className="text-[20px] font-semibold">DAYS</p>
           </div>
           <div className="flex flex-col items-center gap-[10px]">
-            <p className="text-[50px] font-semibold text-white">12</p>
-            <p className="text-[20px] font-semibold text-white">HOURS</p>
+            <p className="text-[50px] font-semibold">12</p>
+            <p className="text-[20px] font-semibold">HOURS</p>
           </div>
           <div className="flex flex-col items-center gap-[10px]">
-            <p className="text-[50px] font-semibold text-white">34</p>
-            <p className="text-[20px] font-semibold text-white">MINS</p>
+            <p className="text-[50px] font-semibold">34</p>
+            <p className="text-[20px] font-semibold">MINS</p>
           </div>
           <div className="flex flex-col items-center gap-[10px]">
             <p className="text-[50px] font-semibold text-special-red">58</p>
-            <p className="text-[20px] font-semibold text-white">SECS</p>
+            <p className="text-[20px] font-semibold">SECS</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <p className="text-lg text-white font-medium">Columns</p>
+          <p className="text-lg font-medium">Columns</p>
           <ColumnsSelector setBodyNum={setSelecteNum} />
         </div>
         <div
