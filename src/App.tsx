@@ -11,6 +11,7 @@ import PrivateRoute from "./components/routing/PrivateRoute";
 import Notification from "./components/notification/Notification";
 import { useAppSelector } from "./app/hooks";
 import { selectIsNotificationOpened } from "./components/routing/routeSlice";
+import History from "./components/history/History";
 
 function App() {
   const isNotificationOpened = useAppSelector(selectIsNotificationOpened);
@@ -27,6 +28,10 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/auth/login" element={<Login />} />
             <Route path="/home" element={<PrivateRoute Component={Home} />} />
+            <Route
+              path="/history"
+              element={<PrivateRoute Component={History} />}
+            />
           </Routes>
         </div>
       </Router>
