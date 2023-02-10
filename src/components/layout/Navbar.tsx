@@ -56,7 +56,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className="absolute w-screen h-screen dark:bg-[#2f2f2f] bg-basic-light top-0 left-0 -z-10"></div>
+      <div className="absolute w-full h-screen dark:bg-[#2f2f2f] bg-basic-light top-0 left-0 -z-10"></div>
 
       {isNotificationOpened ? <Notification buttonRef={buttonRef} /> : <></>}
     </div>
