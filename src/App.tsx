@@ -12,6 +12,7 @@ import Notification from "./components/notification/Notification";
 import { useAppSelector } from "./app/hooks";
 import { selectIsNotificationOpened } from "./components/routing/routeSlice";
 import History from "./components/history/History";
+import Profile from "./components/profile/Profile";
 
 function App() {
   const isNotificationOpened = useAppSelector(selectIsNotificationOpened);
@@ -22,7 +23,7 @@ function App() {
         <div
           className={`${
             isNotificationOpened === true ? "blur-sm" : "blur-none"
-          }`}
+          } dark:bg-[#2f2f2f] bg-basic-light`}
         >
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -31,6 +32,10 @@ function App() {
             <Route
               path="/history"
               element={<PrivateRoute Component={History} />}
+            />
+            <Route
+              path="/profile"
+              element={<PrivateRoute Component={Profile} />}
             />
           </Routes>
         </div>

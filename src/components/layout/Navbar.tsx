@@ -21,7 +21,6 @@ const Navbar = () => {
 
   return (
     <div className="w-full">
-      <Background lightOpacity={100} darkOpacity={80} />
       <div className="w-full h-20 bg-white px-[60px] flex items-center justify-between">
         <img className="w-[138px] h-10" src={SmallLogo} />
         <div className="flex gap-[50px]">
@@ -52,9 +51,13 @@ const Navbar = () => {
         </div>
         <div className="flex gap-[30px] items-center">
           <p className="text-special-red text-2xl font-semibold">985 Kisses</p>
-          <img className="w-[50px] h-[50px] rounded-[50%]" src={UserAvatar} />
+          <Link to="/profile" replace={true}>
+            <img className="w-[50px] h-[50px] rounded-[50%]" src={UserAvatar} />{" "}
+          </Link>
         </div>
       </div>
+      <div className="absolute w-screen h-screen dark:bg-[#2f2f2f] bg-basic-light top-0 left-0 -z-10"></div>
+
       {isNotificationOpened ? <Notification buttonRef={buttonRef} /> : <></>}
     </div>
   );

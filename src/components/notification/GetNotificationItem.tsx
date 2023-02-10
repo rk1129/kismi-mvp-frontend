@@ -1,5 +1,5 @@
 import React from "react";
-import UserAvatar from "../../img/users/1.png";
+import UserAvatar from "../../img/user-avatar.png";
 
 const GetNotificationItem = () => {
   return (
