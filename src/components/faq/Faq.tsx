@@ -4,7 +4,7 @@ const Faq = () => {
   return (
     <div className="text-basic-dark dark:text-white w-full flex flex-col items-center pt-11 pb-4 px-[60px] gap-[30px]">
       <p className="font-bold text-[50px]">Frequently Asked Questions</p>
-      <div className="bg-[#0D0D0D] rounded-[20px] py-4 px-10 gap-[30px] flex flex-col items-center">
+      <div className="dark:bg-[#0D0D0D] bg-[#D1D1D1] rounded-[20px] py-4 px-10 gap-[30px] flex flex-col items-center">
         <p className="text-[26px] font-semibold text-center">
           Rules of KISMI.APP competition:
         </p>
