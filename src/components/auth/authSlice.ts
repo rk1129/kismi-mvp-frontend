@@ -16,10 +16,13 @@ export const authSlice = createSlice({
     loginSuccess: (state) => {
       state.isAuthenticated = true;
     },
+    logout: (state) => {
+      state.isAuthenticated = false;
+    },
   },
 });
 
-export const { loginSuccess } = authSlice.actions;
+export const { loginSuccess, logout } = authSlice.actions;
 
 export const selectIsAuthenticated = (state: RootState) =>
   state.auth.isAuthenticated;

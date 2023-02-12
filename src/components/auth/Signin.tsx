@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Background from "../common/Background";
 import BlackLogo from "../../img/black-logo.svg";
 import WhiteLogo from "../../img/white-logo.svg";
@@ -10,9 +10,12 @@ import InstagramLogo from "../../img/instagram.svg";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { loginSuccess, selectIsAuthenticated } from "./authSlice";
 import { Link, Navigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Signin = () => {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const dispatch = useAppDispatch();
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,10 +56,26 @@ const Signin = () => {
               </p>
               <div className="mt-[10px] w-full border-[1px] rounded-[10px] border-basic-dark dark:border-white py-4 px-5 flex justify-between items-center">
                 <input
-                  type="password"
+                  type={passwordVisible === true ? "text" : "password"}
                   className="outline-none bg-transparent text-basic-dark dark:text-white"
                   placeholder="Type your password"
                 />
+                <button
+                  type="button"
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                >
+                  {passwordVisible === false ? (
+                    <FontAwesomeIcon
+                      icon={solid("eye")}
+                      className="text-white"
+                    />
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={solid("eye-slash")}
+                      className="text-white"
+                    />
+                  )}
+                </button>
               </div>
             </div>
             <button
