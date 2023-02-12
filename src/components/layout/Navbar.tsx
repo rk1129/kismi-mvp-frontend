@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectIsAuthenticated } from "../auth/authSlice";
+import { logout, selectIsAuthenticated } from "../auth/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 import SmallLogo from "../../img/small-logo.svg";
 import UserAvatar from "../../img/user-avatar.png";
@@ -45,6 +45,11 @@ const Navbar = () => {
   const onContactBtnClicked = () => {
     setMoreViewVisible(false);
     dispatch(setContactOpened(true));
+  };
+
+  const onSignoutBtnClicked = () => {
+    setMoreViewVisible(false);
+    dispatch(logout());
   };
 
   return (
@@ -129,6 +134,7 @@ const Navbar = () => {
               <button
                 type="button"
                 className="flex justify-between items-center py-4"
+                onClick={onSignoutBtnClicked}
               >
                 <p className="text-[22px] font-medium">Sign Out</p>
                 <img src={WhiteVector} className="w-2.5 h-4" />
