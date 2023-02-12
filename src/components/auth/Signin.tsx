@@ -5,12 +5,13 @@ import WhiteLogo from "../../img/white-logo.svg";
 import FacebookLogo from "../../img/facebook.svg";
 import TwitterLogo from "../../img/twitter.svg";
 import TikTokLogo from "../../img/tiktok.svg";
+import GoogleLogo from "../../img/google.svg";
 import InstagramLogo from "../../img/instagram.svg";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { loginSuccess, selectIsAuthenticated } from "./authSlice";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
-const Login = () => {
+const Signin = () => {
   const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const dispatch = useAppDispatch();
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,7 +22,7 @@ const Login = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center rounded-[20px]">
       <Background lightOpacity={50} darkOpacity={50} />
-      <div className="w-[576px] py-[110px] px-[60px] bg-white dark:bg-basic-dark flex flex-col items-center rounded-[20px]">
+      <div className="w-[576px] py-[95px] px-[60px] bg-white dark:bg-basic-dark flex flex-col items-center rounded-[20px]">
         <div className="relative h-[57px] w-[203px]">
           <div className="absolute right-0 top-0 ">
             <img src={WhiteLogo} />
@@ -75,11 +76,18 @@ const Login = () => {
             <p className=" text-basic-dark dark:text-white text-xl font-bold w-full text-center">
               OR
             </p>
-            <p className="outline-none border-[1px] border-basic-dark dark:border-white rounded-[10px] w-full py-4 text-basic-dark dark:text-white text-xl font-bold text-center">
-              COUNTINE WITH
-            </p>
+            <Link
+              to="/auth/signup"
+              replace={true}
+              className="outline-none border-[1px] border-basic-dark dark:border-white rounded-[10px] w-full py-4 text-basic-dark dark:text-white text-xl font-bold text-center"
+            >
+              SIGN UP
+            </Link>
           </div>
           <div className="flex gap-[30px] justify-center">
+            <button type="button">
+              <img src={GoogleLogo} />
+            </button>
             <button type="button">
               <img src={FacebookLogo} />
             </button>
@@ -99,4 +107,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signin;

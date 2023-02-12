@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { store } from "./app/store";
 import Landing from "./components/landing/Landing";
-import Login from "./components/auth/Login";
+import Signin from "./components/auth/Signin";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/home/Home";
 import PrivateRoute from "./components/routing/PrivateRoute";
@@ -14,6 +14,7 @@ import History from "./components/history/History";
 import Profile from "./components/profile/Profile";
 import Kissbox from "./components/kissbox/Kissbox";
 import Faq from "./components/faq/Faq";
+import Signup from "./components/auth/Singup";
 
 function App() {
   const isBodyBlur = useAppSelector(selectIsBodyBlur);
@@ -28,7 +29,8 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/auth/login" element={<Login />} />
+            <Route path="/auth/login" element={<Signin />} />
+            <Route path="/auth/signup" element={<Signup />} />
             <Route path="/home" element={<PrivateRoute Component={Home} />} />
             <Route
               path="/history"
