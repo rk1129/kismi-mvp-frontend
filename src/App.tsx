@@ -13,6 +13,8 @@ import { useAppSelector } from "./app/hooks";
 import { selectIsNotificationOpened } from "./components/routing/routeSlice";
 import History from "./components/history/History";
 import Profile from "./components/profile/Profile";
+import Kissbox from "./components/kissbox/Kissbox";
+import Faq from "./components/faq/Faq";
 
 function App() {
   const isNotificationOpened = useAppSelector(selectIsNotificationOpened);
@@ -37,6 +39,11 @@ function App() {
               path="/profile"
               element={<PrivateRoute Component={Profile} />}
             />
+            <Route
+              path="/kissbox"
+              element={<PrivateRoute Component={Kissbox} />}
+            />
+            <Route path="/faq" element={<PrivateRoute Component={Faq} />} />
           </Routes>
         </div>
       </Router>
