@@ -1,20 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectIsAuthenticated } from "../auth/authSlice";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SmallLogo from "../../img/small-logo.svg";
 import UserAvatar from "../../img/user-avatar.png";
 import Notification from "../notification/Notification";
 import {
+  selectIsContactOpened,
   selectIsNotificationOpened,
-  setIsnotificationOpened,
+  setContactOpened,
+  setNotificationOpened,
 } from "../routing/routeSlice";
 import WhiteVector from "../../img/vector-white.png";
+import Contact from "./Contact";
 
 const Navbar = () => {
   const wrappedRef = useRef<HTMLDivElement>(null);
   const [moreViewVisible, setMoreViewVisible] = useState(false);
   const isNotificationOpened = useAppSelector(selectIsNotificationOpened);
+  const isContactOpened = useAppSelector(selectIsContactOpened);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -38,8 +42,14 @@ const Navbar = () => {
     return navigate("/faq");
   };
 
+  const onContactBtnClicked = () => {
+    setMoreViewVisible(false);
+    dispatch(setContactOpened(true));
+  };
+
   return (
-    <div className="w-full">
+    <div className="relative w-full">
+      {isContactOpened && <Contact />}
       <div className="w-full h-20 bg-white px-[60px] flex items-center justify-between">
         <img className="w-[138px] h-10" src={SmallLogo} />
         <div className="flex gap-[50px]">
@@ -55,7 +65,7 @@ const Navbar = () => {
             type="button"
             className="text-basic-dark text-2xl font-normal"
             onClick={() =>
-              dispatch(setIsnotificationOpened(!isNotificationOpened))
+              dispatch(setNotificationOpened(!isNotificationOpened))
             }
           >
             NOTIFICATION
@@ -111,6 +121,7 @@ const Navbar = () => {
               <button
                 type="button"
                 className="flex justify-between items-center py-4 border-b-[1px] border-[#B3B3B3]"
+                onClick={onContactBtnClicked}
               >
                 <p className="text-[22px] font-medium">Contact</p>
                 <img src={WhiteVector} className="w-2.5 h-4" />
@@ -134,7 +145,6 @@ const Navbar = () => {
         </div>
       </div>
       <div className="absolute w-full h-screen dark:bg-[#2f2f2f] bg-basic-light top-0 left-0 -z-10"></div>
-
       {isNotificationOpened ? <Notification buttonRef={buttonRef} /> : <></>}
     </div>
   );

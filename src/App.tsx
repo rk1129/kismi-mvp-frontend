@@ -8,23 +8,22 @@ import Login from "./components/auth/Login";
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/home/Home";
 import PrivateRoute from "./components/routing/PrivateRoute";
-import Notification from "./components/notification/Notification";
 import { useAppSelector } from "./app/hooks";
-import { selectIsNotificationOpened } from "./components/routing/routeSlice";
+import { selectIsBodyBlur } from "./components/routing/routeSlice";
 import History from "./components/history/History";
 import Profile from "./components/profile/Profile";
 import Kissbox from "./components/kissbox/Kissbox";
 import Faq from "./components/faq/Faq";
 
 function App() {
-  const isNotificationOpened = useAppSelector(selectIsNotificationOpened);
+  const isBodyBlur = useAppSelector(selectIsBodyBlur);
   return (
     <Provider store={store}>
       <Router>
         <Navbar />
         <div
           className={`${
-            isNotificationOpened === true ? "blur-sm" : "blur-none"
+            isBodyBlur === true ? "blur-sm" : "blur-none"
           } dark:bg-[#2f2f2f] bg-basic-light`}
         >
           <Routes>

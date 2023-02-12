@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import ColumnsSelector from "../common/ColumnSelector";
 import ViewItem from "../common/ViewItem";
-import { setIsnotificationOpened } from "../routing/routeSlice";
+import { setNotificationOpened } from "../routing/routeSlice";
 import CongratModal from "./CongratModal";
 import { selectIsBlur } from "./homeSlice";
 
@@ -11,7 +11,7 @@ const Home = () => {
   const isBlur = useAppSelector(selectIsBlur);
 
   useEffect(() => {
-    dispatch(setIsnotificationOpened(false));
+    dispatch(setNotificationOpened(false));
   }, []);
 
   const [selectedNum, setSelecteNum] = useState(4);

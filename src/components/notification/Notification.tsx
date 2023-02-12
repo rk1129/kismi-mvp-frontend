@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { useAppDispatch } from "../../app/hooks";
-import { setIsnotificationOpened } from "../routing/routeSlice";
+import { setNotificationOpened } from "../routing/routeSlice";
 import AchivementNotification from "./AchivementNotification";
 import GetNotificationItem from "./GetNotificationItem";
 
@@ -19,7 +19,7 @@ const Notification = ({
       buttonRef.current &&
       !buttonRef.current.contains(event.target as any)
     ) {
-      dispatch(setIsnotificationOpened(false));
+      dispatch(setNotificationOpened(false));
     }
   };
   useEffect(() => {

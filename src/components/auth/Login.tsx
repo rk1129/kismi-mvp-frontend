@@ -5,7 +5,7 @@ import WhiteLogo from "../../img/white-logo.svg";
 import FacebookLogo from "../../img/facebook.svg";
 import TwitterLogo from "../../img/twitter.svg";
 import TikTokLogo from "../../img/tiktok.svg";
-import InstargramLogo from "../../img/instargram.svg";
+import InstagramLogo from "../../img/instagram.svg";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { loginSuccess, selectIsAuthenticated } from "./authSlice";
 import { Navigate } from "react-router-dom";
@@ -90,7 +90,7 @@ const Login = () => {
               <img src={TikTokLogo} />
             </button>
             <button type="button">
-              <img src={InstargramLogo} />
+              <img src={InstagramLogo} />
             </button>
           </div>
         </form>
